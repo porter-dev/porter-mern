@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    image: porter-mern-backend
+    container_name: porter-mern-backend
+    command: /src/app/node_modules/.bin/nodemon server.js
+    volumes:
+      - ./backend:/src/app
+      - /src/app/node_modules
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    environment:
+      - NODE_ENV=development
+  mongo:
+    image: mongo
+    volumes:
+      - data-volume:/data/db
+    ports:
+      - "27017:27017"
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    image: porter-mern-frontend
+    container_name: porter-mern-frontend
+    command: npm start
+    volumes:
+      - ./frontend/:/src/app
+      - /src/app/node_modules
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+
+volumes:
+    data-volume:
+    node_modules:
