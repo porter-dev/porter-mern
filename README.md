@@ -12,6 +12,7 @@ This is an experimental feature of Porter that is still in active development.
 1. Clone this repository into your local directory.
 2. Log in and create a project on https://dashboard.alpha.getporter.dev.
 3. Download the Porter CLI with `npm i -g porter-cli` (currently Mac only).
-4. Develop your application by running `docker-compose up --build` from the root directory. For those who are not familiar with Docker, this will spin up a development environment with hot reloading configured. 
+4. Login from the CLI by running `porter login alpha.getporter.dev`.
+4. Develop your application by running `docker-compose up --build` from the root directory. For those who are not familiar with Docker, this will spin up a development environment with hot reloading configured for the MERN stack. 
 You can view your application on http://localhost:3000.
 5. Once you are ready to deploy, run `porter compose` from the root directory. This will deploy your entire stack on Porter. This may take up to 5 minutes.
