@@ -14,4 +14,4 @@ This is an experimental feature of Porter that is still in active development.
 3. Download the Porter CLI with `npm i -g porter-cli` (currently Mac only).
 4. Develop your application by running `docker-compose up --build` from the root directory. For those who are not familiar with Docker, this will spin up a development environment with hot reloading configured. 
 You can view your application on http://localhost:3000.
-5. Once you are ready to deploy, run `porter compose` from the root directory. This will deploy your entire stack on Porter.
+5. Once you are ready to deploy, run `porter compose` from the root directory. This will deploy your entire stack on Porter. This may take up to 5 minutes.
