@@ -17,6 +17,7 @@ services:
       - mongo
     environment:
       - NODE_ENV=development
+      - MONGO_URL=localhost:27017
   mongo:
     image: mongo
     volumes:
@@ -34,6 +35,8 @@ services:
       - /src/app/node_modules
     depends_on:
       - porter-mern-backend
+    environment:
+      - BACKEND_URL=localhost:8080
     ports:
       - "3000:3000"
 
